@@ -1,3 +1,6 @@
+'''
+Author: Avinash Nagarajan
+'''
 import sys
 import re
 
@@ -13,13 +16,15 @@ def gridSearch(grid, pattern):
             if locate_line is not None:
                 if start_pos == -1:
                     track += 1
-                    row = re.sub("\n", '', grid[track])
+                    if track < len(grid):
+                        row = re.sub("\n", '', grid[track])
                     start_pos = locate_line.start()
                     end_pos = locate_line.end()
                 else:
                     if locate_line.start() == start_pos and locate_line.end() == end_pos:
                         track += 1
-                        row = re.sub("\n", '', grid[track])
+                        if track < len(grid):
+                            row = re.sub("\n", '', grid[track])
 
         if (track - i) == len(pattern):
             return 'YES'
@@ -41,4 +46,4 @@ if __name__ == '__main__':
         
         print(gridSearch(grid, pattern))
 
-    filename.close()=    
+    filename.close()
