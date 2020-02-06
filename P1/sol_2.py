@@ -57,7 +57,7 @@ def write_output(file_name, results):
 
 
 def main():
-    grids, patterns = read_input("input.txt")
+    grids, patterns = read_input("input03.txt")
 
     results = list()
     for i in range(len(patterns)):
