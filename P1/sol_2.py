@@ -36,7 +36,7 @@ def solve(larger, pattern):
             found = True
             for c in range(len(pattern)):
                 for d in range(len(pattern[0])):
-                    if (a + c) < len(larger) and (b + d) < len(larger[0]) and larger[a + c][b + d] != pattern[c][d]:
+                    if len(larger) <= (a + c) or len(larger[0]) <= (b + d) or larger[a + c][b + d] != pattern[c][d]:
                         found = False
                         break
                 if not found:
