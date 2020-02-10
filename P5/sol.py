@@ -127,7 +127,7 @@ def write_output(file_name, grid):
 
 
 def main():
-    n, lines = read_input("input00.txt")
+    n, lines = read_input()
     grid = solve(n, lines)
     print("Penalty: " + str(calculate_penalty(n, grid)))
 
