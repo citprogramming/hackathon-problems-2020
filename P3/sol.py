@@ -1,10 +1,8 @@
 import sys
 
 if __name__ == '__main__':
-    file = open(sys.argv[1], "r")
-
-    first_problem = list(map(int ,file.readLine().split()))
-    second_problem = list(map(int, file.readLine().split()))
+    first_problem = list(map(int ,sys.stdin.readLine().split()))
+    second_problem = list(map(int, sys.stdin.readLine().split()))
 
     bob, alice = 0
     for i in range(3):

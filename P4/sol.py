@@ -1,10 +1,9 @@
 import sys
 
 if __name__ == '__main__':
-    file = open(sys.argv[1], "r")
-    for i in range(int(file.readline())):
-        l, a, b = map(int, file.readline().split())
-        s = file.readline()
+    for i in range(int(sys.stdin.readline())):
+        l, a, b = map(int, sys.stdin.readline().split())
+        s = sys.stdin.readline()
         i = 1
         cost = 0
         cost = [float('inf')] * (l + 1)

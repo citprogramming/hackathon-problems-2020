@@ -57,17 +57,16 @@ def kingRichardKnights(n, s, commands, knights):
     return coordinates
 
 if __name__=='__main__':
-    file = open(sys.argv[1], "r")
-    n = int(file.readline())
-    s = int(file.readline())
+    n = int(sys.stdin.readline())
+    s = int(sys.stdin.readline())
     commands = []
 
     for _ in range(s):
-        commands.append(list(map(int, file.readline().rstrip().split())))
+        commands.append(list(map(int, sys.stdin.readline().rstrip().split())))
 
-    important_knights_num = int(file.readline())
+    important_knights_num = int(sys.stdin.readline())
     knights = []
     for _ in range(important_knights_num):
-        knights.append(int(file.readline()))
+        knights.append(int(sys.stdin.readline()))
     result = kingRichardKnights(n, s, commands, knights)
     print(result)
