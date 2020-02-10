@@ -2,8 +2,8 @@ import sys
 
 if __name__ == '__main__':
     lines = int(sys.stdin.readline())
-    first_problem = list(map(int ,sys.stdin.readLine().split()))
-    second_problem = list(map(int, sys.stdin.readLine().split()))
+    first_problem = list(map(int ,sys.stdin.readline().split()))
+    second_problem = list(map(int, sys.stdin.readline().split()))
 
     bob, alice = 0
     for i in range(3):
@@ -14,5 +14,5 @@ if __name__ == '__main__':
         else:
             alice += 2
     
-    print("\n",alice, " ", bob)
+    print(alice, " ", bob,"\n")
 
