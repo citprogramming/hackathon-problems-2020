@@ -1,7 +1,7 @@
 import sys
 
-def read_input(file_name):
 
+def read_input():
     line = sys.stdin.readline()
     splits = line.split(' ')
 
@@ -16,7 +16,6 @@ def read_input(file_name):
 
 
 def solve(n, lines):
-
     # Penalties is a 3D array that keeps track of all potential penalties if we were to add a particular number.
     # After each insertion we update the row, column and box for the value inserted.
     dimensions = n * n
@@ -131,6 +130,7 @@ def main():
     n, lines = read_input("input00.txt")
     grid = solve(n, lines)
     print("Penalty: " + str(calculate_penalty(n, grid)))
+
 
 if __name__ == "__main__":
     main()
