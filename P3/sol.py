@@ -71,4 +71,4 @@ if __name__=='__main__':
         knights.append(int(sys.stdin.readline()))
     result = kingRichardKnights(n, s, commands, knights)
     for i in result:
-        print(' '.join(list(map(str, i))), "\n")
+        print(' '.join(list(map(str, i))))
