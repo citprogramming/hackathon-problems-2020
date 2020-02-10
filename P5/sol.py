@@ -128,8 +128,15 @@ def write_output(file_name, grid):
 
 def main():
     n, lines = read_input()
+
     grid = solve(n, lines)
-    print("Penalty: " + str(calculate_penalty(n, grid)))
+
+    for x in range(n * n):
+        line = ""
+        for y in range(n * n):
+            line += str(grid[x][y]) + " "
+        print(line)
+    # print("Penalty: " + str(calculate_penalty(n, grid)))
 
 
 if __name__ == "__main__":
