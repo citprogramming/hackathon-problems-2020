@@ -1,6 +1,7 @@
 import sys
 
 if __name__ == '__main__':
+    lines = int(sys.stdin.readline())
     first_problem = list(map(int ,sys.stdin.readLine().split()))
     second_problem = list(map(int, sys.stdin.readLine().split()))
 
@@ -13,5 +14,5 @@ if __name__ == '__main__':
         else:
             alice += 2
     
-    print(alice, "\t", bob)
+    print("\n",alice, " ", bob)
 

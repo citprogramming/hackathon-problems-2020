@@ -1,6 +1,7 @@
 import sys
 
 if __name__ == '__main__':
+    lines = int(sys.stdin.readline())
     for i in range(int(sys.stdin.readline())):
         l, a, b = map(int, sys.stdin.readline().split())
         s = sys.stdin.readline()

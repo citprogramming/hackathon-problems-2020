@@ -31,6 +31,7 @@ def gridSearch(grid, pattern):
     return 'NO'
 
 if __name__ == '__main__':
+    lines = int(sys.stdin.readline())
     test_case = int(sys.stdin.readline())
     for i in range(1, test_case+1):
         r_and_c = sys.stdin.readline().split()

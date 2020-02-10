@@ -57,6 +57,7 @@ def kingRichardKnights(n, s, commands, knights):
     return coordinates
 
 if __name__=='__main__':
+    lines = int(sys.stdin.readline())
     n = int(sys.stdin.readline())
     s = int(sys.stdin.readline())
     commands = []
@@ -69,4 +70,4 @@ if __name__=='__main__':
     for _ in range(important_knights_num):
         knights.append(int(sys.stdin.readline()))
     result = kingRichardKnights(n, s, commands, knights)
-    print(result)
+    print("\n",result)
