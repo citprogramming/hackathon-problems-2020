@@ -1,17 +1,17 @@
+import sys
 
 def read_input(file_name):
-    with open(file_name, 'r') as file_text:
-        line = file_text.readline()
-        splits = line.split(' ')
 
-        n = int(splits[0])
-        num_lines = int(splits[1])
+    line = sys.stdin.readline()
+    splits = line.split(' ')
 
-        lines = list()
-        for i in range(num_lines):
-            line = file_text.readline()
-            lines.append(line)
+    n = int(splits[0])
+    num_lines = int(splits[1])
 
+    lines = list()
+    for i in range(num_lines):
+        line = sys.stdin.readline()
+        lines.append(line)
     return n, lines
 
 
