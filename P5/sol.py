@@ -131,8 +131,6 @@ def main():
     n, lines = read_input("input00.txt")
     grid = solve(n, lines)
     print("Penalty: " + str(calculate_penalty(n, grid)))
-    write_output("output.txt", grid)
-
 
 if __name__ == "__main__":
     main()
