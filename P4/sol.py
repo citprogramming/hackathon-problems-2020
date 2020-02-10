@@ -20,4 +20,4 @@ if __name__ == '__main__':
             cost[i] = min(cost[i-1] + a, cost[i])
             i += 1               
                 
-        print(cost[-1])
+        print("\n", cost[-1])
