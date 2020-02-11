@@ -133,17 +133,21 @@ if __name__ == '__main__':
     line = sys.stdin.readline()
     raw_data = sys.stdin.readline().split("-")
     raw_data = raw_data[0:len(raw_data)-1]
-    n = int(int(sys.stdin.readline())
-    s = int(sys.stdin.readline())
+    n = int(int(raw_data[0]))
+    s = int(raw_data[1])
 
-    commands = []n 
+    commands = []
+    j = 2
     for _ in range(s):
-        commands.append(list(map(int, sys.stdin.readline().rstrip().split())))
+        commands.append(list(map(int, raw_data[j].rstrip().split())))
+        j += 1
 
-    kn = int(sys.stdin.readline())
+    kn = int(raw_data[j])
     knights = []
+    j += 1
     for _ in range(kn):
-        knights.append(int(sys.stdin.readline().strip()))
+        knights.append(int(raw_data[j].strip()))
+        j += 1
 
     result = kingRichardKnights(n, commands, knights)
 
