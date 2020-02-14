@@ -40,12 +40,12 @@ def calculate_penalty(n, grid):
 
 
 def main():
-    n = int(raw_input())
+    n = int(input())
     dimensions = n * n
     grid = [[0 for i in range(dimensions)] for j in range(dimensions)]
 
     for i in range(dimensions):
-        line = raw_input().split()
+        line = input().split()
         for j in range(dimensions):
             grid[i][j] = int(line[j])
 

@@ -24,7 +24,7 @@ def insert_number(grid, penalties, n, row, column, number):
 
 
 if __name__ == "__main__":
-    line = raw_input().split()
+    line = input().split()
     n, k = int(line[0]), int(line[1])
     dimensions = n * n
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     penalties = [[[0 for x in range(dimensions)] for y in range(dimensions)] for i in range(dimensions)]
 
     for i in range(k):
-        line = raw_input().split()
+        line = input().split()
         insert_number(grid, penalties, n, (int(line[0]) - 1), (int(line[1]) - 1), int(line[2]))
 
     # While there are still empty spaces, find and insert the best number next. This is not a backtracking solution.
