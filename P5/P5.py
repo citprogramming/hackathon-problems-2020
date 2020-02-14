@@ -31,19 +31,20 @@ def gridSearch(grid, pattern):
     return 'NO'
 
 if __name__ == '__main__':
-    lines = int(sys.stdin.readline())
-    test_case = int(sys.stdin.readline())
+    file = open(sys.argv[1], "r")
+    lines = int(file.readline())
+    test_case = int(file.readline())
     for i in range(1, test_case+1):
-        r_and_c = sys.stdin.readline().split()
+        r_and_c = file.readline().split()
         rows = int(r_and_c[0])
         grid = []
         for j in range(1, rows+1):
-            grid.append(sys.stdin.readline())
-        rows = int(sys.stdin.readline().split()[0])
+            grid.append(file.readline())
+        rows = int(file.readline().split()[0])
         pattern = []
         for _ in range(rows):
-            pattern.append(sys.stdin.readline())
+            pattern.append(file.readline())
         
         print("\n",gridSearch(grid, pattern))
 
-    sys.stdin.close()
+    file.close()
