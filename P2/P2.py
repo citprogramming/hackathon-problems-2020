@@ -1,10 +1,9 @@
 import sys
 
 if __name__ == '__main__':
-    file = open(sys.argv[1], "r")
-    lines = int(file.readline())
-    first_problem = list(map(int ,file.readline().split()))
-    second_problem = list(map(int, file.readline().split()))
+    input_file = open(sys.argv[1], 'r')
+    first_problem = list(map(int, input_file.readline().split()))
+    second_problem = list(map(int, input_file.readline().split()))
 
     bob = 0
     alice = 0
@@ -15,6 +14,7 @@ if __name__ == '__main__':
             continue
         else:
             alice += 1
-    
-    print(alice, " ", bob,"\n")
+
+    with open(sys.argv[2], 'w') as output_file:
+        output_file.write(str(alice) + " " + str(bob) + "\n")
 

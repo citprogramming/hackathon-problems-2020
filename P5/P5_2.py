@@ -1,22 +1,11 @@
-'''
+"""
 Author: Stephen Driscoll
-'''
+"""
 import sys
-def read_input(file_name):
-    lines = int(sys.stdin.readline())
-    num_tests = int(sys.stdin.readline())
-
-    grids = list()
-    patterns = list()
-    for i in range(num_tests):
-        grids.append(read_grid(sys.stdin.readline()))
-        patterns.append(read_grid(sys.stdin.readline()))
-
-    return grids, patterns
 
 
-def read_grid(sys.stdin.readline()):
-    line = sys.stdin.readline().readline()
+def read_grid(input_file):
+    line = input_file.readline()
     splits = line.split(' ')
     rows = int(splits[0])
     columns = int(splits[1])
@@ -24,7 +13,7 @@ def read_grid(sys.stdin.readline()):
     grid = list()
     for i in range(rows):
         grid.append(list())
-        line = sys.stdin.readline().readline()
+        line = input_file.readline()
         for j in range(columns):
             grid[i].append(line[j])
 
@@ -48,24 +37,24 @@ def solve(larger, pattern):
     return False
 
 
-def write_output(file_name, results):
-    with open(file_name, 'w') as file_out:
-        for i in range(len(results)):
-            if results[i]:
-                file_out.write("YES\n")
-            else:
-                file_out.write("NO\n")
-
-
 def main():
-    grids, patterns = read_input("input03.txt")
+    with open(sys.argv[1], 'r') as input_file:
+        num_tests = int(input_file.readline())
+
+        grids, patterns = list(), list()
+        for i in range(num_tests):
+            grids.append(read_grid(input_file))
+            patterns.append(read_grid(input_file))
 
     results = list()
     for i in range(len(patterns)):
         results.append(solve(grids[i], patterns[i]))
 
-    write_output("output.txt", results)
+    with open(sys.argv[2], 'w') as output_file:
+        for i in range(len(results)):
+            if results[i]:
+                output_file.write("YES\n")
+            else:
+                output_file.write("NO\n")
 
-
-if __name__ == "__main__":
     main()

@@ -1,8 +1,9 @@
-'''
+""""
 Author: Avinash Nagarajan
-'''
+"""
 import sys
 import re
+
 
 def gridSearch(grid, pattern):
     for i in range(len(grid)):
@@ -30,21 +31,24 @@ def gridSearch(grid, pattern):
             return 'YES'
     return 'NO'
 
+
 if __name__ == '__main__':
-    file = open(sys.argv[1], "r")
-    lines = int(file.readline())
-    test_case = int(file.readline())
+    input_file = open(sys.argv[1], "r")
+    test_case = int(input_file.readline())
+
+    result = ""
     for i in range(1, test_case+1):
-        r_and_c = file.readline().split()
+        r_and_c = input_file.readline().split()
         rows = int(r_and_c[0])
         grid = []
         for j in range(1, rows+1):
-            grid.append(file.readline())
-        rows = int(file.readline().split()[0])
+            grid.append(input_file.readline())
+        rows = int(input_file.readline().split()[0])
         pattern = []
         for _ in range(rows):
-            pattern.append(file.readline())
+            pattern.append(input_file.readline())
         
-        print("\n",gridSearch(grid, pattern))
+        result += gridSearch(grid, pattern) + "\n"
 
-    file.close()
+    with open(sys.argv[2], 'w') as output_file:
+        output_file.write(result)

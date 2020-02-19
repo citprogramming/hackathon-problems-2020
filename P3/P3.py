@@ -130,20 +130,23 @@ def kingRichardKnights(n, commands, knights):
     return result
 
 if __name__ == '__main__':
-    file = open(sys.argv[1], "r")
-    line = file.readline()
-    n = int(file.readline())
-    s = int(file.readline())
+    input_file = open(sys.argv[1], "r")
+    n = int(input_file.readline())
+    s = int(input_file.readline())
     commands = []
     for _ in range(s):
-        commands.append(list(map(int, file.readline().rstrip().split())))
+        commands.append(list(map(int, input_file.readline().rstrip().split())))
 
-    kn = int(file.readline())
+    kn = int(input_file.readline())
     knights = []
     for _ in range(kn):
-        knights.append(int(file.readline().strip()))
+        knights.append(int(input_file.readline().strip()))
 
     result = kingRichardKnights(n, commands, knights)
 
+    result_string = ""
     for i in result:
-        print(' '.join(list(map(str, i))))
+        result_string += ' '.join(list(map(str, i))) + "\n"
+
+    with open(sys.argv[2], 'w') as output_file:
+        output_file.write(result_string)
